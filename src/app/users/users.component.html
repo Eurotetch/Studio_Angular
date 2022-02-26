@@ -1,7 +1,21 @@
 <table>
-  <caption>Users</caption>
+  <caption>{{title}}</caption> <!-- title è il title in users.component.ts -->
   <tr>
     <th>Name</th>
     <th>Last Name</th>
+    <th>Fiscal Code</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Province</th>
+    <th>Age</th>
   </tr>
+  <!-- {{users | json }}       | è un Pipe.  users è l'array di oggetti e mostra tutti gli oggetti, che in JavaScript vengono mostrati come object Object. Il Pipe serve per mostrare il contenuto di quell'oggetto -->
+  <tr *ngFor="let user of users"> <!-- esegue un ciclo con Angular, richiamandolo con *ng, salvando i risultati nella variabile "user", presi dall'array "users" -->
+    <td>{{user.name}}</td>
+    <td>{{user.last_name}}</td>
+    <td>{{user.fiscal_code}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.province}}</td>
+    <td>{{user.age}}</td>
 </table>
