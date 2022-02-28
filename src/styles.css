@@ -3,6 +3,7 @@
   width: 98%;
   margin:auto;
   vertical-align: top;
+  margin-bottom: 250px;
 }
 
 .users {
@@ -36,4 +37,27 @@
   padding: 5px;
   width: 80px;
   margin-right: 10px;
+}
+
+
+
+
+
+
+.spiegazione_eventi {
+  font-size: x-small;
+  color: purple;
+  width: 300px;
+  margin-top: 100px;
+  padding-top: 100px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+.spiegazione_eventi_form {
+  font-size: xx-small;
+  height: 8px;
+  width: 80px;
+  color: purple;
+  background-color: blanchedalmond;
 }

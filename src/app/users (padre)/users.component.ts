@@ -47,7 +47,7 @@ import { UserService } from "../services/user.service";
         this.service.deleteUser(item) /* metodo in user.service.ts */
       }
 
-      onSelectUser(item: any) {
+      onSelectUser(item: User) {
         this.editUser.emit(item); /* comunica a chi riceve l'intero contenuto di item */
       }
 

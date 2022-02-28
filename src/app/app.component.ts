@@ -1,3 +1,5 @@
+import { style } from '@angular/animations';
+import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { User } from './interfaces/user';
 
@@ -8,8 +10,14 @@ import { User } from './interfaces/user';
 })
 export class AppComponent {
   title = 'user_manager';
+
+  getData(val:string) {
+    console.warn(val)
+  }
+
   userSelected: User | undefined
   editUser(item: any) {
     this.userSelected = item;
   }
+
 }
