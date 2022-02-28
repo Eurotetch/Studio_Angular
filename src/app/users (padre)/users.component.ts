@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { User } from "../interfaces/user";
 import { UserService } from "../services/user.service";
 
@@ -12,6 +12,7 @@ import { UserService } from "../services/user.service";
     title = "List of Users"
     public users:User[] = []; /* users è di tipo User. vedi: interfaces/user.ts.  è come una maschera che decide come deve essere composto, molto simile ai Modelli di Laravel */
     @Input ('user-data') item:any; /* Decoratore @Input riceve una variabile item. Il suo alias è 'user-data' per richiamarla anche fuori come variabile pubblica. In futuro se cambiassimo la variabile user in altri nomi, tipo item, non cambierebbe niente al di fuori di quì */
+    @Output ('edit-user') editUser = new EventEmitter<User>();
 
     /* Questo costruttore si occuperà di inizializzare il servizio, ma non costruirà niente finchè non verrà chiamato GetUsers() */
     constructor(private service: UserService) { /* Injection di Angular del servizio UserService. service è di tipo UserService. */
@@ -41,9 +42,13 @@ import { UserService } from "../services/user.service";
         this.users = this.service.getUsers(); /* Quì Angular crea in automatico una variabile "private" e Inietterà questa dipendency */
 
       }
-
+      /* dopo aver ricevuto un evento in ascolto dal figlio con .emit, vedi: user.component.ts in onDeleteUser.emit */
       onDeleteUser(item: User) { /* item è di tipo User. Vedi: interfaces/user.ts. è come una maschera, come indicato sopra, molto simile ai Modelli di Laravel */
         this.service.deleteUser(item) /* metodo in user.service.ts */
+      }
+
+      onSelectUser(item: any) {
+        this.editUser.emit(item); /* comunica a chi riceve l'intero contenuto di item */
       }
 
   }

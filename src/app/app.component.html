@@ -1,2 +1,10 @@
 <h1>CIAO MONDO</h1>
-<app-users></app-users>
+<!-- 3<pre> {{userSelected | json}} </pre> -->
+<div class="main">
+  <div class="users">
+    <app-users (edit-user)="editUser($event)" >  </app-users> <!-- intercetta l'evento (edit-user), entra nel metodo editUser e ti passa i dati emessi -->
+  </div>
+  <div class="userDetail" *ngIf="userSelected"> <!-- Decoratore che mostra l'elemento solo SE ... . Questo non appesantisce il caricamento dell'app OnInit -->
+    <app-user-detail class="userDetail">  </app-user-detail>
+  </div>
+</div>

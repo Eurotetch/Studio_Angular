@@ -6,7 +6,7 @@
     <th>Fiscal Code</th>
     <th>Email</th>
     <th>Phone</th>
-    <th>Province</th>
+    <th>Prov</th>
     <th>Age</th>
 
     <th>Actions</th>
@@ -15,7 +15,11 @@
   <!-- | è un Pipe.  users è l'array di oggetti e mostra tutti gli oggetti, che in JavaScript vengono mostrati come object Object. Il Pipe serve per mostrare il contenuto di quell'oggetto -->
 
   <!-- esegue un ciclo con Angular, richiamandolo con *ng, salvando i risultati nella variabile "user", presi dall'array "users" -->
-  <tr app-user *ngFor = "let item of users" [user-data] = "item" (onDeleteUser) = "onDeleteUser($event)">
+  <tr app-user
+    *ngFor = "let item of users"
+    [user-data] = "item"
+    (onDeleteUser) = "onDeleteUser($event)"
+    (onSelectUser) = "onSelectUser($event)" >
     <!-- i decoratori vanno dentro il tag dell'html, esattamente come accade con il .appendchild di javascript -->
     <!-- "item" fa riferimento alla variabile let user del ciclo For, mentre [user-data] è il componente che riceve il valore in Input -->
     <!-- abbiamo passato la variabile item al componente figlio, user.component.html -->
@@ -28,6 +32,6 @@
 <!-- Angular Event: ( ... ) -->
 </table>
 
-<pre> {{users | json }} </pre>
+<!-- <pre> {{users | json }} </pre> -->
 
 

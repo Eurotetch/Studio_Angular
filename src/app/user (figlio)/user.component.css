@@ -1,0 +1,22 @@
+td {
+  color: purple;
+  background-color: slategray;
+  padding: 5px;
+  font-size: smaller;
+}
+
+button.delete {
+  background-color: crimson;
+  color: blanchedalmond;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: smaller;
+}
+
+button.edit {
+  background-color: goldenrod;
+  color: blanchedalmond;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: smaller;
+}

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+.main {
+  width: 98%;
+  margin:auto;
+  vertical-align: top;
+}
+
+.users {
+  float: left;
+  width: 60%;
+}
+
+.userDetail {
+  float: left;
+  width: 40%;
+}
+
+
+
+.form-group label{
+  display: inline-block;
+  text-align: left;
+  padding: 5px;
+  width: 120px;
+  }
+
+.form-footer {
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-save {
+  background-color: green;
+  color: blanchedalmond;
+  font-weight: bold;
+  padding: 5px;
+  width: 80px;
+  margin-right: 10px;
+}

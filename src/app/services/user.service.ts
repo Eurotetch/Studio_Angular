@@ -10,7 +10,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -19,7 +19,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio 2isMejoChe1",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -28,7 +28,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio Trinity",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -37,7 +37,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio 4x4",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -46,7 +46,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio Gimme5",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -55,7 +55,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio 666",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
@@ -64,7 +64,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
     {
       name: "Ciccio 7bello",
       last_name: "Burn",
-      email: "ciccio@helloutofhere.burn",
+      email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
       province: "Hell",
       phone: "666000",
