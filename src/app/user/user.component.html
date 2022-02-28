@@ -1,10 +1,10 @@
-    <td>{{item.name}}</td>
-    <td>{{item.last_name}}</td>
-    <td>{{item.fiscal_code}}</td>
-    <td>{{item.email}}</td>
-    <td>{{item.phone}}</td>
-    <td>{{item.province}}</td>
-    <td>{{item.age}}</td>
+    <td>{{item?.name}}</td> <!-- ? è un nullsafe: se l'oggetto è null, non esegue la parte dopo il . -->
+    <td>{{item?.last_name}}</td>
+    <td>{{item?.fiscal_code}}</td>
+    <td>{{item?.email}}</td>
+    <td>{{item?.phone}}</td>
+    <td>{{item?.province}}</td>
+    <td>{{item?.age}}</td>
     <td>
       <button class="delete" (click)="deleteUser()"> DELETE </button> <!-- Angular riconosce (click) come metodo per catturare l'evento di Click, per poi effettuare l'azione appena dopo -->
     </td>

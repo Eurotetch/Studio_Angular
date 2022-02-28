@@ -15,8 +15,13 @@
   <!-- | è un Pipe.  users è l'array di oggetti e mostra tutti gli oggetti, che in JavaScript vengono mostrati come object Object. Il Pipe serve per mostrare il contenuto di quell'oggetto -->
 
   <!-- esegue un ciclo con Angular, richiamandolo con *ng, salvando i risultati nella variabile "user", presi dall'array "users" -->
-  <tr app-user *ngFor = "let item of users" [user-data] = "item"> <!-- "item" fa riferimento alla variabile let user del ciclo For, mentre [user-data] è il componente che riceve il valore in Input -->
+  <tr app-user *ngFor = "let item of users" [user-data] = "item" (onDeleteUser) = "onDeleteUser($event)">
+    <!-- i decoratori vanno dentro il tag dell'html, esattamente come accade con il .appendchild di javascript -->
+    <!-- "item" fa riferimento alla variabile let user del ciclo For, mentre [user-data] è il componente che riceve il valore in Input -->
     <!-- abbiamo passato la variabile item al componente figlio, user.component.html -->
+
+    <!-- $event è una variabile di Angular che catturare i dati passati dal componente figlio -->
+    <!-- Quando verrà emesso questo evento dal click Delete, rimarrà in ascolto con un alert di conferma -->
   </tr>
 
 <!-- Angular Input: [ ... ] -->

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { UserService } from "../user.service";
+import { User } from "../interfaces/user";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: "app-users", /* seleziona un elemento tag tr che abbia un attributo "app-user" */
@@ -9,7 +10,7 @@ import { UserService } from "../user.service";
 })
   export class UsersComponent implements OnInit { /* OnInit è  */
     title = "List of Users"
-    public users:any[] = [];
+    public users:User[] = []; /* users è di tipo User. vedi: interfaces/user.ts.  è come una maschera che decide come deve essere composto, molto simile ai Modelli di Laravel */
     @Input ('user-data') item:any; /* Decoratore @Input riceve una variabile item. Il suo alias è 'user-data' per richiamarla anche fuori come variabile pubblica. In futuro se cambiassimo la variabile user in altri nomi, tipo item, non cambierebbe niente al di fuori di quì */
 
     /* Questo costruttore si occuperà di inizializzare il servizio, ma non costruirà niente finchè non verrà chiamato GetUsers() */
@@ -41,5 +42,8 @@ import { UserService } from "../user.service";
 
       }
 
+      onDeleteUser(item: User) { /* item è di tipo User. Vedi: interfaces/user.ts. è come una maschera, come indicato sopra, molto simile ai Modelli di Laravel */
+        this.service.deleteUser(item) /* metodo in user.service.ts */
+      }
 
   }
