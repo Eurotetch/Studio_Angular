@@ -15,17 +15,14 @@
   <!-- | è un Pipe.  users è l'array di oggetti e mostra tutti gli oggetti, che in JavaScript vengono mostrati come object Object. Il Pipe serve per mostrare il contenuto di quell'oggetto -->
 
   <!-- esegue un ciclo con Angular, richiamandolo con *ng, salvando i risultati nella variabile "user", presi dall'array "users" -->
-  <tr *ngFor = "let item of users">
-    <app-user [user-data] = "item"></app-user> <!-- "user" fa riferimento alla variabile let user del ciclo For, mentre [user-data] è il componente che riceve il valore in Input -->
+  <tr app-user *ngFor = "let item of users" [user-data] = "item"> <!-- "item" fa riferimento alla variabile let user del ciclo For, mentre [user-data] è il componente che riceve il valore in Input -->
     <!-- abbiamo passato la variabile item al componente figlio, user.component.html -->
-
-    <td>
-      <button class="delete" (click)="deleteUser(item)"> DELETE </button> <!-- Angular riconosce (click) come metodo per catturare l'evento di Click, per poi effettuare l'azione appena dopo -->
-    </td>
   </tr>
+
+<!-- Angular Input: [ ... ] -->
+<!-- Angular Event: ( ... ) -->
 </table>
 
 <pre> {{users | json }} </pre>
 
-<!-- Angular Input: [ ... ] -->
-<!-- Angular Event: ( ... ) -->
+

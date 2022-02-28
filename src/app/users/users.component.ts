@@ -41,7 +41,5 @@ import { UserService } from "../user.service";
 
       }
 
-      deleteUser(user:any) {
-        alert(user.lastname)
-      }
+
   }
