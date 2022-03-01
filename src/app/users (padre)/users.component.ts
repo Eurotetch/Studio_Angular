@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { User } from "../interfaces/user";
+import { User } from "../classes/user";
 import { UserService } from "../services/user.service";
 
 @Component({
@@ -48,7 +48,8 @@ import { UserService } from "../services/user.service";
       }
 
       onSelectUser(item: User) {
-        this.editUser.emit(item); /* comunica a chi riceve l'intero contenuto di item */
+        const userCopy = Object.assign({}, item) /* crea una variabile nella quale assegna ad un Oggetto vuoto i dati di item */
+        this.editUser.emit(userCopy); /* comunica a chi riceve l'intero contenuto della copia momentanea di item */
       }
 
   }

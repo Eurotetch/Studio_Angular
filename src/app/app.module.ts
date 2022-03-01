@@ -8,6 +8,7 @@ import { UserComponent } from './user (figlio)/user.component';
 import { UsersComponent } from './users (padre)/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

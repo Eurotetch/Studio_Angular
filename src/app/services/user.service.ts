@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from "../interfaces/user";
+import { User } from "../classes/user";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,7 @@ import { User } from "../interfaces/user";
 export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da un'array */
   users: Array<User> = [ /* users è di tipo Array< di tipo User, definito da interfaces/user.ts > */
     {
+      id: 1,
       name: "Ciccio",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -17,6 +18,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 2,
       name: "Ciccio 2isMejoChe1",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -26,6 +28,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 3,
       name: "Ciccio Trinity",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -35,6 +38,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 4,
       name: "Ciccio 4x4",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -44,6 +48,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 5,
       name: "Ciccio Gimme5",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -53,6 +58,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 6,
       name: "Ciccio 666",
       last_name: "Burn",
       email: "ciccio@hell.burn",
@@ -62,6 +68,7 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       age: 36,
     },
     {
+      id: 7,
       name: "Ciccio 7bello",
       last_name: "Burn",
       email: "ciccio@hell.burn",

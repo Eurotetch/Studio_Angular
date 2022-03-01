@@ -1,7 +1,5 @@
-import { style } from '@angular/animations';
-import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { User } from './interfaces/user';
+import { User } from './classes/user';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +13,11 @@ export class AppComponent {
     console.warn(val)
   }
 
-  userSelected: User | undefined
-  editUser(item: any) {
+  showForm: boolean = false;
+  userSelected: User = new User(); /* inizializza un nuovo Utente della classe User */
+  editUser(item: User) {
     this.userSelected = item;
+    this.showForm = true;
   }
 
 }

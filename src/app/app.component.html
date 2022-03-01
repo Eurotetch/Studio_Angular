@@ -4,8 +4,8 @@
   <div class="users">
     <app-users (edit-user)="editUser($event)" >  </app-users> <!-- intercetta l'evento (edit-user), entra nel metodo editUser e ti passa i dati emessi -->
   </div>
-  <div class="userDetail" *ngIf="userSelected"> <!-- Decoratore che mostra l'elemento solo SE ... . Questo non appesantisce il caricamento dell'app OnInit -->
-    <app-user-detail class="userDetail">  </app-user-detail>
+  <div class="userDetail" *ngIf="showForm"> <!-- Decoratore che mostra l'elemento solo SE ... . Questo non appesantisce il caricamento dell'app OnInit -->
+    <app-user-detail [item] = "userSelected" >  </app-user-detail>
   </div>
 </div>
 
