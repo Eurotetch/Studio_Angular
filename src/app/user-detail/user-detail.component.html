@@ -1,4 +1,4 @@
-<form class="userForm">
+<form class="userForm" #f="ngForm"> <!-- #f è una Template Variable. Per vedere come reagisce Angular con ngForm: {{f.form | json}} -->
 
   <div class="form-group">
     <input type="hidden" [(ngModel)]="item.id" name="id" id="id" >
@@ -27,6 +27,7 @@
   </div>
 
   <div class="form-group form-footer">
+    <button (click)="resetForm(f.form)" class="btn-reset"> RESET </button>
     <button (click)="saveUser()" class="btn-save"> SAVE </button>
   </div>
 

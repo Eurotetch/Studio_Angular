@@ -9,13 +9,17 @@ import { UsersComponent } from './users (padre)/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PipesComponent } from './pipes/pipes.component';
+import { UcfirstPipe } from './ucfirst.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     UserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    PipesComponent,
+    UcfirstPipe
   ],
   imports: [
     BrowserModule,

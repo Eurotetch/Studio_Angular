@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { User } from "../classes/user";
+import { UserInterface } from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
@@ -86,9 +87,22 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
   public deleteUser(item: User) {
     const index = this.users.indexOf(item); /* indexOf gli passiamo un oggetto ed esso ci ritorna dove si trova quell'elemento richiesto (item). */
     /* Se indexOf non trova l'elemento, ritorna -1 */
-    if (index > -1) {
+    if (index >= 0) {
       this.users.splice(index, 1) /* metodo .splice: cerca l'elemento all'indice 1, poi lo elimina */
     }
   }
+
+  editUser(item: User) {
+    const index = this.users.findIndex((v) => v.id == item.id); /* users è l'array di utenti. .findIndex aspetta in ingresso una funzione che ritorna true o false, per il valore che cerchiamo. La funzione è un'arrow function: se l'id della funzione è uguale all'id passato per editarlo: true */
+    if (index !== -1) { /* ha trovato un id */
+      this.users[index] = item;
+    }
+
+  }
+
+  addUser(item: User) {
+      this.users.splice(0,0,item); /* viene aggiunto in posizione 0, non elimina un altro record, si chiamerà item */
+    }
+
 
 }

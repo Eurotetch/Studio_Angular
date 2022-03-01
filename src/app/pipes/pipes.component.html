@@ -1,0 +1,22 @@
+<div class="spiegazione_pipes">
+  <h2> Currency Pipes in Angular </h2>
+<p> Converte il valore a sinistra, separato da un | (pipe), e lo mostra nel modo scelto a destra </p>
+
+<div style="text-align:center">
+<h1>{{title | uppercase | titlecase}} </h1>
+<h5>{{'ESEMPIO' | lowercase}}</h5>
+<p> ho {{45.50 | currency: 'EUR '}} in tasca </p> <!-- codice EURO che corrisponde a € -->
+<p> ho {{45.50 | currency: 'franchi svizzeri '}} in tasca </p> <!-- mostra il codice voluto -->
+<p> Oggi è {{todayDate | date: 'fullDate':'+2':'it-it'}}</p>
+<p> In Inghilterra è {{todayDate | date: 'dd/mm/yy H:m:s':'+3'}}</p>
+
+<h5> Frase riordinata con Maiuscola in ogni parola (NEL MEzZo deL CAMmIN DI NostRA ViTA): </h5>
+<p> {{'NEL MEzZo deL CAMmIN DI NostRA ViTA' | lowercase | ucfirst}}</p>
+
+
+</div>
+
+
+
+
+</div>

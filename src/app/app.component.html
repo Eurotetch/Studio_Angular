@@ -1,11 +1,20 @@
 <h1>CIAO MONDO</h1>
-<!-- 3<pre> {{userSelected | json}} </pre> -->
-<div class="main">
-  <div class="users">
-    <app-users (edit-user)="editUser($event)" >  </app-users> <!-- intercetta l'evento (edit-user), entra nel metodo editUser e ti passa i dati emessi -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <a href="#" (click)="addUser()"> Add New User </a> <!-- invoca la funzione addUser per aprire il Form e compilarlo -->
+      <app-users (edit-user)="editUser($event)" >  </app-users> <!-- intercetta l'evento (edit-user), entra nel metodo editUser e ti passa i dati emessi -->
+    </div>
+
+    <div class="col-4">
+      <div class="userDetail" *ngIf="showForm"> <!-- Decoratore che mostra l'elemento solo SE ... . Questo non appesantisce il caricamento dell'app OnInit -->
+      <app-user-detail [item] = "userSelected" >  </app-user-detail>
+    </div>
   </div>
-  <div class="userDetail" *ngIf="showForm"> <!-- Decoratore che mostra l'elemento solo SE ... . Questo non appesantisce il caricamento dell'app OnInit -->
-    <app-user-detail [item] = "userSelected" >  </app-user-detail>
+
+  <div class="users">
+    <app-pipes></app-pipes>
   </div>
 </div>
 
@@ -13,8 +22,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 <div class="spiegazione_eventi">
-  <h2> Eventi in Angular </h2>
+  <h2> Eventi in JavaScript Angular </h2>
 
   <button (click)="getData('button clicked event')"> Click me </button> (Vedi console.log)
   <hr>
