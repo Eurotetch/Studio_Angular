@@ -1,7 +1,7 @@
 
-<table>
+<table class="table table-striped table-dark bg-dark table-sm table-small text-center">
   <caption>{{title}}</caption> <!-- title è il title in users.component.ts -->
-  <tr>
+  <tr class="bg-black">
     <th>Name</th>
     <th>Last Name</th>
     <th>Fiscal Code</th>
@@ -16,7 +16,7 @@
   <!-- | è un Pipe.  users è l'array di oggetti e mostra tutti gli oggetti, che in JavaScript vengono mostrati come object Object. Il Pipe serve per mostrare il contenuto di quell'oggetto -->
 
   <!-- esegue un ciclo con Angular, richiamandolo con *ng, salvando i risultati nella variabile "user", presi dall'array "users" -->
-  <tr app-user
+  <tr class="text-center" app-user
     *ngFor = "let item of users"
     [user-data] = "item"
     (onDeleteUser) = "onDeleteUser($event)"
@@ -29,8 +29,6 @@
     <!-- Quando verrà emesso questo evento dal click Delete, rimarrà in ascolto con un alert di conferma -->
   </tr>
 
-<!-- Angular Input: [ ... ] -->
-<!-- Angular Event: ( ... ) -->
 </table>
 
 

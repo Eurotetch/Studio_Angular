@@ -4,8 +4,8 @@ export interface UserInterface {
     last_name: string;
     email: string;
     fiscal_code: string;
-    province: string;
     phone: string;
+    province: string;
     age: number;
   }
 /* tutto questo è la definizione di come è composto un User, ossia in questo caso un array di stringhe e numeri */

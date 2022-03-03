@@ -1,4 +1,5 @@
-    <td>{{item?.name}}</td> <!-- ? è un nullsafe: se l'oggetto è null, non esegue la parte dopo il . -->
+
+  <td>{{item?.name}}</td> <!-- ? è un nullsafe: se l'oggetto è null, non esegue la parte dopo il . -->
     <td>{{item?.last_name}}</td>
     <td>{{item?.fiscal_code}}</td>
     <td>{{item?.email}}</td>
@@ -6,6 +7,25 @@
     <td>{{item?.province}}</td>
     <td>{{item?.age}}</td>
     <td>
-      <button class="delete" (click)="deleteUser()"> DELETE </button> <!-- Angular riconosce (click) come metodo per catturare l'evento di Click, per poi effettuare l'azione appena dopo -->
-      <button class="edit" (click)="editUser()"> EDIT </button>
+      <div class="row">
+        <div class="col-4">
+          <a class="btn btn-sm btn-primary btn-sm" (click)="showUserDetail()" > INFO <!-- altro metodo: [routerLink] = "['/users' , item?.id , 'edit']" -->
+            <i class="fa fa-info fa-5x"></i>
+          </a>
+          <!-- <fa-icon [icon]="faInfo" name="info" fixed="true"></fa-icon> -->
+        </div>
+        <div class="col-4">
+          <a class="btn btn-sm btn-primary btn-sm" routerLink = "/users/{{item?.id}}/edit" > EDIT
+            <i class="fas fa-pencil-alt"></i>
+          </a>
+
+          <!-- <fa-icon [icon]="faPencilAlt" name="pencil" fixed="true"></fa-icon> -->
+        </div>
+        <div class="col-4">
+          <a class="btn btn-sm btn-danger btn-sm" (click)="deleteUser()"> DELETE <!-- Angular riconosce (click) come metodo per catturare l'evento di Click, per poi effettuare l'azione appena dopo -->
+            <i class="fa fa-trash fa-5x"></i>
+          </a>
+          <!-- <fa-icon [icon]="faTrash" name="trash" fixed="true"></fa-icon> -->
+        </div>
+      </div>
     </td>

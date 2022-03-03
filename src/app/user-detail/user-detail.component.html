@@ -1,34 +1,42 @@
-<form class="userForm" #f="ngForm"> <!-- #f è una Template Variable. Per vedere come reagisce Angular con ngForm: {{f.form | json}} -->
-
+<div class="container">
+  <form class="fs-6" #f="ngForm"> <!-- #f è una Template Variable. Per vedere come reagisce Angular con ngForm: {{f.form | json}} -->
+  <div class="row justify-content-center">
+  <div class="col-6">
   <div class="form-group">
     <input type="hidden" [(ngModel)]="item.id" name="id" id="id" >
     <label for="name"> Name </label>
-    <input [(ngModel)]="item.name" name="name" id="name"  > <!-- ngModel è un "binding" di dati per mostrare in un form. E' sia in INPUT che in OUTPUT, quindi riceve il dato e lo mostra anche -->
+    <input [(ngModel)]="item.name" name="name" id="name" class="form-control"> <!-- ngModel è un "binding" di dati per mostrare in un form. E' sia in INPUT che in OUTPUT, quindi riceve il dato e lo mostra anche -->
   </div>
   <div class="form-group">
     <label for="last_name"> Last Name </label>
-    <input [(ngModel)]="item.last_name" name="last_name" id="last_name">
+    <input [(ngModel)]="item.last_name" name="last_name" id="last_name" class="form-control">
   </div>
   <div class="form-group">
     <label for="fiscal_code"> Fiscal Code </label>
-    <input [(ngModel)]="item.fiscal_code" name="fiscal_code" id="fiscal_code">
+    <input [(ngModel)]="item.fiscal_code" name="fiscal_code" id="fiscal_code" class="form-control">
   </div>
+  </div>
+  <div class="col-6">
   <div class="form-group">
     <label for="phone"> Phone </label>
-    <input [(ngModel)]="item.phone" name="phone" id="phone">
+    <input [(ngModel)]="item.phone" name="phone" id="phone" class="form-control">
   </div>
   <div class="form-group">
     <label for="email"> Email </label>
-    <input [(ngModel)]="item.email" name="email" id="email" type="email">
+    <input [(ngModel)]="item.email" name="email" id="email" type="email" class="form-control">
   </div>
   <div class="form-group">
     <label for="age"> Age </label>
-    <input [(ngModel)]="item.age" name="age" id="age" type="number">
+    <input [(ngModel)]="item.age" name="age" id="age" type="number" class="form-control">
   </div>
 
-  <div class="form-group form-footer">
-    <button (click)="resetForm(f.form)" class="btn-reset"> RESET </button>
-    <button (click)="saveUser()" class="btn-save"> SAVE </button>
-  </div>
 
+</div>
+<div class="form-group form-footer my-4">
+  <a (click)="backToUsers()" class="btn btn-primary mx-3" > BACK </a>
+  <a (click)="resetForm(f.form)" class="btn btn-outline-secondary mx-3"> RESET </a>
+  <a (click)="saveUser()" class="btn btn-success mx-3"> SAVE </a>
+</div>
+</div>
 </form>
+</div>

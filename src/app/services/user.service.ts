@@ -14,8 +14,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -24,8 +24,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -34,8 +34,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -44,8 +44,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -54,8 +54,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -64,8 +64,8 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
     {
@@ -74,14 +74,19 @@ export class UserService { /* Serve, ossia ci da dei dati, anziché prenderli da
       last_name: "Burn",
       email: "ciccio@hell.burn",
       fiscal_code: "DPDC666MLM",
-      province: "Hell",
       phone: "666000",
+      province: "Hell",
       age: 36,
     },
   ];
 
-  public getUsers() { /* Metodo prendi Da. ritorna un elenco di utenti dall'array. Un altro metodo migliore è prendere l'elenco da un API esterno*/
+
+  public getUsers() : User[] { /* Metodo prendi Da. ritorna un elenco di utenti dall'array. Un altro metodo migliore è prendere l'elenco da un API esterno*/
     return this.users;
+  }
+
+  getUser(id: number): User | undefined {
+    return this.users.find(item => item.id === id);
   }
 
   public deleteUser(item: User) {
