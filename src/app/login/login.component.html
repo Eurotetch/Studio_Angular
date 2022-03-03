@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+      <form name="loginForm" #f="ngForm" (ngSubmit)="logIn(f)"> <!-- altro metodo per catturare i dati immessi nel form. ngSubmit prende il submit di Angular e non quello di html base -->
+      <div class="form-group">
+        <!-- email -->
+        <label for="email"> Email </label>
+        <input class="form-control" type="email" name="email" id="email" ngModel #email="ngModel" required>
+          <div *ngIf="email.dirty && email.touched && email.invalid">
+                appare uno dei 2 alert sotto, in base all'errore -->
+              <!-- <div *ngIf="email.errors.required" class="alert-danger"> This Field is required </div>
+              <div *ngIf="email.errors.email" class="alert-danger"> Must be a valid email </div> -->
+          </div>
+      <div class="form-group">
+        <!-- password -->
+        <label for="email"> Password </label>
+        <input class="form-control" type="password" name="password" id="password" ngModel #password="ngModel" minlength="6" required>
+        <div *ngIf="password.dirty && password.touched && password.invalid">
+              appare uno dei 2 alert sotto, in base all'errore -->
+            <!-- <div *ngIf="password.errors.required" class="alert-danger"> This Field is required </div>
+            <div *ngIf="password.errors.minlegth" class="alert-danger"> Password must be at least 6 characters </div> -->
+        </div>
+      </div>
+
+      <div class="form-group text-center">
+        <button [disabled]="!f.valid" class="btn btn-primary"> Log In </button> <!-- si abilita solo se il form è valido -->
+      </div>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div>

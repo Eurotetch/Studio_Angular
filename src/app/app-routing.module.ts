@@ -8,6 +8,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserService } from "./services/user.service";
 import { UserDataComponent } from './user-data/user-data.component';
+import { RouteGuardService } from './route-guard.service';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [ /* è un'Array di oggetti, ognuno dei quali specifica un path diverso */
   {
@@ -30,14 +32,20 @@ export const routes: Routes = [ /* è un'Array di oggetti, ognuno dei quali spec
   },
   {
     path: 'users/:id/edit', /* :id è un placeholder che cattura qualsiasi cosa ci sia tra users/ ed /edit. In questo caso l'id dell'utente */
-    component: UserDetailComponent
+    component: UserDetailComponent,
+    canActivate: [RouteGuardService] /* prima di caricare la rotta, Angular verifica se canActivate è true, quindi accessibile */
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
 @NgModule({
   declarations: [ /* dichiara la lista esatta di come vengono presi i componenti da redirigere */
-    UsersComponent, UserComponent, UserDetailComponent, PipesComponent
+    UsersComponent, UserComponent, UserDetailComponent, PipesComponent, LoginComponent
   ],
+  providers: [RouteGuardService],
   imports: [RouterModule.forRoot(routes), FormsModule, CommonModule],
   exports: [RouterModule]
 })

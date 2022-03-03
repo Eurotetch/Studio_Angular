@@ -1,5 +1,6 @@
 table {
   border-collapse: separate !important;
+  margin-top: 80px;
 }
 
 .table-dark {

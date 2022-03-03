@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="fixed-top navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a href="#" class="navbar-brand"> Top Navbar </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-current="page">
@@ -16,10 +16,27 @@
           <a href="#" class="nav-link active" aria-current="page"  (click)="addUser()" routerLink="users/new"> Add New User </a> <!-- invoca la funzione addUser per aprire il Form e compilarlo -->
         </li>
       </ul>
-<form action="" class="d-flex">
-  <input type="search" placeholder="search" aria-label="Users" class="form-control me-2">
-  <button class="btn btn-outline-success" type="submit"> Search </button>
-</form>
+
+      <!-- searchbar -->
+      <form action="" class="d-flex">
+        <input type="search" placeholder="search" aria-label="Users" class="form-control me-2">
+        <button class="btn btn-outline-success" type="submit"> Search </button>
+      </form>
+
+      <!-- login e logut -->
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <!-- appare solo se l'utente non è loggato (! negazione) -->
+          <a *ngIf="!isUserLoggedIn" href="#" class="nav-link"> Log In</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <!-- appare solo se l'utente è loggato -->
+          <a *ngIf="isUserLoggedIn" (click)="logout($event)" href="#" class="nav-link"> Logout</a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>

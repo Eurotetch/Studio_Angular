@@ -1,0 +1,17 @@
+table {
+  border-collapse: separate !important;
+  margin-top: 40px;
+}
+
+.table-dark {
+  --bs-table-bg: none !important;
+}
+
+tr, td {
+  font-size: small;
+}
+
+th {
+  font-size: x-small;
+  padding: 5px;
+}

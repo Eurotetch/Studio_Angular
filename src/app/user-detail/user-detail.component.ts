@@ -31,14 +31,15 @@ export class UserDetailComponent implements OnInit {
     }
 
   ngOnInit() : void {
-    this.item = new User();
-    this.route.params.subscribe(params => {
-      if (!params['id']) {
+    this._item = new User();
+
+    this.route.paramMap.subscribe(params => {
+      if (!params.get('id')) {
         return;
       }
 
-      const test = this.userService.getUser(+params['id']);
-      if (test) {this.item = test}
+      const edit = this.userService.getUser(+params.getAll('id'));
+      if (edit) {this._item = edit}
     });
 
   }
@@ -61,7 +62,8 @@ export class UserDetailComponent implements OnInit {
   resetForm(form: FormGroup) { /* form è di tipo FormGroup, non può essere Any */
     if (this.item.id > 0) { /* se il form ha un campo con un id almeno di 0 (partenza array), significa che sta Modificando un utente esistente */
       this.item = this.copyUser;
-      alert('Non è possibile resettare i campi di un Utente già registrare')
+      alert('Non è possibile resettare i campi di un Utente già registrato')
+      return;
     } else { /* altrimenti significa che si è premuto Add New User e non il pulsante Edit */
       this.item = new User();
     }
