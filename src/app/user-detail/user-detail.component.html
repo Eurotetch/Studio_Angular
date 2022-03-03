@@ -3,39 +3,68 @@
   <div class="row justify-content-center">
   <div class="col-6">
   <div class="form-group">
-    <input type="hidden" [(ngModel)]="item.id" name="id" id="id" >
+    <!-- id -->
+    <input type="hidden" [(ngModel)]="item.id" name="id" id="id" > <!-- ngModel è un "binding" di dati per mostrare in un form. E' sia in INPUT che in OUTPUT, quindi riceve il dato e lo mostra anche -->
+    <!-- name -->
     <label for="name"> Name </label>
-    <input [(ngModel)]="item.name" name="name" id="name" class="form-control"> <!-- ngModel è un "binding" di dati per mostrare in un form. E' sia in INPUT che in OUTPUT, quindi riceve il dato e lo mostra anche -->
+    <input #name="ngModel" [(ngModel)]="item.name" name="name" id="name" class="form-control" minlength="3" required pattern="[a-z A-Z \s]*" required> <!-- required pattern prende solo campi con minuscole (a-z), maiuscole (A-Z), spazi (\s) -->
+    <div *ngIf="name.dirty && name.touched && name.invalid">
+    <!-- Se il campo name è stato compilato (dirty), se è stato cliccato (touched), e se inserito ma invalido (invalid):
+         appare uno dei 2 alert sotto, in base all'errore -->
+      <!-- <div *ngIf="name.errors.required" class="alert-danger"> This Field is Required </div>
+      <div *ngIf="name.errors.minlegth" class="alert-danger"> Field needs a min legth of {{name.errors.minlegth.requiredLegth}} characters </div>
+      <div *ngIf="name.errors.pattern" class="alert-danger"> Field must contain only a-z and A-Z letters. No numbers or symbols allowed </div> -->
+      <!-- #name è una variabile locale che fa riferimento a ngModel, così da poterla recuperare nell'If, per far apparire l'alert solo se il campo name è invalido (name.invalid) -->
+    </div>
   </div>
   <div class="form-group">
+    <!-- last name -->
     <label for="last_name"> Last Name </label>
-    <input [(ngModel)]="item.last_name" name="last_name" id="last_name" class="form-control">
+    <input #last_name="ngModel" [(ngModel)]="item.last_name" name="last_name" id="last_name" class="form-control" minlength="3" required pattern="[a-z A-Z \s]*" required> <!-- required pattern prende solo campi con minuscole (a-z), maiuscole (A-Z), spazi (\s) -->
+    <div *ngIf="last_name.dirty && last_name.touched && last_name.invalid">
+      <!-- <div *ngIf="last_name.errors.required" class="alert-danger"> This Field is Required </div>
+      <div *ngIf="last_name.errors.minlegth" class="alert-danger"> Field needs a min legth of {{last_name.errors.minlegth.requiredLegth}} characters </div>
+      <div *ngIf="last_name.errors.pattern" class="alert-danger"> Field must contain only a-z and A-Z letters. No numbers or symbols allowed </div> -->
+    </div>
   </div>
   <div class="form-group">
+    <!-- fiscal_code -->
     <label for="fiscal_code"> Fiscal Code </label>
-    <input [(ngModel)]="item.fiscal_code" name="fiscal_code" id="fiscal_code" class="form-control">
+    <input #fiscal_code="ngModel" [(ngModel)]="item.fiscal_code" name="fiscal_code" id="fiscal_code" class="form-control" required>
+    <div *ngIf="fiscal_code.dirty && fiscal_code.touched && fiscal_code.invalid">
+    </div>
+  </div>
+  <div class="form-group">
+    <!-- province -->
+    <label for="fiscal_code"> Province </label>
+    <input #province="ngModel" [(ngModel)]="item.province" name="province" id="province" class="form-control" required>
+    <div *ngIf="province.dirty && province.touched && province.invalid">
+    </div>
   </div>
   </div>
   <div class="col-6">
   <div class="form-group">
+    <!-- phone -->
     <label for="phone"> Phone </label>
     <input [(ngModel)]="item.phone" name="phone" id="phone" class="form-control">
   </div>
   <div class="form-group">
+    <!-- email -->
     <label for="email"> Email </label>
     <input [(ngModel)]="item.email" name="email" id="email" type="email" class="form-control">
   </div>
   <div class="form-group">
+    <!-- age -->
     <label for="age"> Age </label>
     <input [(ngModel)]="item.age" name="age" id="age" type="number" class="form-control">
   </div>
+  <div class="form-group form-footer my-4">
+    <!-- buttons -->
+    <a (click)="backToUsers()" class="btn btn-primary mx-3" > BACK </a>
+    <a (click)="resetForm(f.form)" class="btn btn-outline-secondary mx-3"> RESET </a>
+    <button (click)="saveUser()" class="btn btn-success mx-3" [disabled]="f.invalid"> SAVE </button>
+  </div>
 
-
-</div>
-<div class="form-group form-footer my-4">
-  <a (click)="backToUsers()" class="btn btn-primary mx-3" > BACK </a>
-  <a (click)="resetForm(f.form)" class="btn btn-outline-secondary mx-3"> RESET </a>
-  <a (click)="saveUser()" class="btn btn-success mx-3"> SAVE </a>
 </div>
 </div>
 </form>

@@ -1,0 +1,3 @@
+input.ng-invalid { /* quando un form ha un campo invalid: cambia colore bordo. classe ng-invalid viene aggiunta in automatico da Angular quando c'è un error, così come valid o altre classi automatiche */
+  border: 1px solid red;
+}
